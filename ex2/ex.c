@@ -1,15 +1,15 @@
 #include<stdio.h>
 
 void ex2() {
-    char word[10];               // ´Ü¾î¸¦ ÀúÀåÇÒ ¹è¿­
-    int length;                  // ¹®ÀÚ¿­ ±æÀÌ
+    char word[10];               // ë‹¨ì–´ë¥¼ ì €ì¥í•  ë°°ì—´
+    int length;                  // ë¬¸ìì—´ ê¸¸ì´
 
-    printf("´Ü¾î¸¦ ÀÔ·ÂÇÏ¼¼¿ä: ");
+    printf("ë‹¨ì–´ë¥¼ ì…ë ¥í•˜ì„¸ìš”: ");
     scanf("%s", word);
 
-    length = strlen(word);    // ¹®ÀÚ¿­ÀÇ ±æÀÌ¸¦ ±¸ÇÔ
+    length = strlen(word);    // ë¬¸ìì—´ì˜ ê¸¸ì´ë¥¼ êµ¬í•¨
 
-    // 0ºÎÅÍ ¹®ÀÚ¿­ ±æÀÌÀÇ Àı¹İ¸¸Å­ ¹İº¹
+    // 0ë¶€í„° ë¬¸ìì—´ ê¸¸ì´ì˜ ì ˆë°˜ë§Œí¼ ë°˜ë³µ
     for (int i = 0; i < length / 2; i++)
     {
         if (word[i] != word[length - 1 - i])
@@ -24,15 +24,41 @@ void ex2() {
     return 0;
 }
 
+void ex3() {
+    int a[10];
+    int sum = 0;
+    double avg;
+    int result;
+    printf("10ê°œì˜ ì •ìˆ˜ë¥¼ ì…ë ¥í•˜ì‹œì˜¤ : ");
+    for (int i = 0; i < 10; i++) {
+        printf("%d.", i + 1);
+        scanf("%d", &a[i]);
+        sum += a[i];
+    }
+   
+    avg = sum / (double)10;
+    int b = ((int)(avg * 10)) % 10;
+    
+    if (b > 4) {
+        result = (int)avg + 1;
+    }
+    else {
+        result = (int)avg;
+    }
+    printf("%d\n", result);
+}
+
 int main(void) {
 	int exnum;
-	printf("¿¹Á¦ ¹øÈ£ ÀÔ·Â : ");
+	printf("ì˜ˆì œ ë²ˆí˜¸ ì…ë ¥ : ");
 	scanf("%d", &exnum);
 	switch (exnum)
 	{
-	case 1:
+	case 2:
 		ex2();
 		break;
-		
+    case 3:
+        ex3();
+        break;
 	}
 }
